@@ -1,7 +1,7 @@
 ---
- - name: "Get ping response"
+ - name: "Get uptime"
    hosts: all
    tasks:
-   - action: uptime
+   - shell: uptime
      register: hello
-   - debug: msg="{hello.stdout}"
+   - debug: msg="{{hello.stdout_lines}}"
